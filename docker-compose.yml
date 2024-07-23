@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: tomcat
+    build: .
+    tty: true
+    ports:
+      - 80:8080
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
+      - tomcat_manager:/usr/local/tomcat/webapps/manager
+
+volumes:
+    tomcat_manager:   
